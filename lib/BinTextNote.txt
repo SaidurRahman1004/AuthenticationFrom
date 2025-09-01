@@ -1,0 +1,194 @@
+
+
+
+/////////////////////////////////////////////////////////////v1////////////////////////////////////////////////////////////////////
+
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+
+class SingupUI extends StatelessWidget {
+  SingupUI({super.key});
+
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  bool _isPasswordVisible = false;
+  @override
+  void dispose(){
+    _usernameController.dispose();
+    _emailController.dispose();
+    _phoneController.dispose();
+    _passwordController.dispose();
+
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Sing Up")),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Sign Up',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF29B6F6),
+                  fontSize: 36,
+                  fontFamily: 'DM Sans',
+                  height: 0,
+                  letterSpacing: -1.44,
+                ),
+              ),
+              SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _usernameController,
+                  maxLength: 12,
+                  decoration: InputDecoration(
+                    hintText: "ENTER Your User Name",
+                    labelText: "Username",
+                    helperText: "Use Valid UserName",
+                    prefixIcon: Icon(Icons.person),
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    hintText: "ENTER Your Email",
+                    labelText: "Email",
+                    helperText: "Use Valid Email",
+                    prefixIcon: Icon(Icons.mail),
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _phoneController,
+                  maxLength: 10,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: "ENTER Your 10 Digit Phone No",
+                    labelText: "Phone",
+                    helperText: "Dont Use Contry Code",
+                    prefixIcon: Icon(Icons.phone),
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _passwordController,
+                  maxLength: 10,
+                  obscureText: true,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: "ENTER Your Password",
+                    labelText: "Password",
+                    helperText: "Use Strong Password",
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF29B6F6),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    fixedSize: Size(350, 58),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    'Sign Up',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontFamily: 'DM Sans',
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+//RichText
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: RichText(
+                  textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'DM Sans',
+                    ),
+                      children: <TextSpan>[
+                        TextSpan(text: 'You are completely safe.\n'),
+                        TextSpan(text: 'Read our Terms & Conditions. ',
+                          style: TextStyle(
+                            color: Colors.blue, // নীল রঙ
+                            decoration: TextDecoration.underline, // আন্ডারলাইন (ঐচ্ছিক)
+                            fontWeight: FontWeight.bold, // বোল্ড করতে চাইলে (ঐচ্ছিক)
+                          ),
+                        ),
+
+                      ],
+                ),),
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/////////////////////////////////////////////////////////////v1////////////////////////////////////////////////////////////////////
+
