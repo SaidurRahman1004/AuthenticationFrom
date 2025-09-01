@@ -168,8 +168,8 @@ class SingupUI extends StatelessWidget {
                         TextSpan(text: 'Read our Terms & Conditions. ',
                           style: TextStyle(
                             color: Colors.blue, // নীল রঙ
-                            decoration: TextDecoration.underline, // আন্ডারলাইন (ঐচ্ছিক)
-                            fontWeight: FontWeight.bold, // বোল্ড করতে চাইলে (ঐচ্ছিক)
+                            decoration: TextDecoration.underline,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
 
